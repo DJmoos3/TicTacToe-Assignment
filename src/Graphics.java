@@ -6,12 +6,15 @@ public class Graphics
     private String line1;
     private String line2;
     private String line3;
+    private String verticalLine1;
+    private String verticalLine2;
+    private String verticalLine3;
     private String diagonalLine1;
     private String diagonalLine2;
 
     public void cleanTheDeck()
     {
-        Arrays.fill(placableSpots, "");
+        Arrays.fill(placableSpots, "-");
         setLine1("");
         setLine2("");
         setLine3("");
@@ -73,5 +76,29 @@ public class Graphics
 
     public void setDiagonalLine2(String diagonalLine2) {
         this.diagonalLine2 = diagonalLine2;
+    }
+
+    public String getVerticalLine1() {
+        return verticalLine1;
+    }
+
+    public void setVerticalLine1(String verticalLine1) {
+        this.verticalLine1 = verticalLine1;
+    }
+
+    public String getVerticalLine2() {
+        return verticalLine2;
+    }
+
+    public void setVerticalLine2(String verticalLine2) {
+        this.verticalLine2 = verticalLine2;
+    }
+
+    public String getVerticalLine3() {
+        return verticalLine3;
+    }
+
+    public void setVerticalLine3(String verticalLine3) {
+        this.verticalLine3 = verticalLine3;
     }
 }

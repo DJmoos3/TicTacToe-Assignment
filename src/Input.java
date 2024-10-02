@@ -15,8 +15,9 @@ public class Input
             if (scanner.hasNextInt())
             {
                 choosenPlacement = scanner.nextInt();
+                choosenPlacement--;
                 scanner.nextLine();
-                if (results.getPlacableSpots(choosenPlacement).equalsIgnoreCase(""))
+                if (results.getPlacableSpots(choosenPlacement).equalsIgnoreCase("-"))
                 {
                     results.setPlacableSpots(player.getType(), choosenPlacement);
                     hasPlaced = true;
