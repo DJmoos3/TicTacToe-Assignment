@@ -1,88 +1,77 @@
+import java.util.Arrays;
+
 public class Graphics
 {
+    private String placableSpots[] = new String[9];
+    private String line1;
+    private String line2;
+    private String line3;
+    private String diagonalLine1;
+    private String diagonalLine2;
 
-    public String getCase1() {
-        return " | | ";
+    public void cleanTheDeck()
+    {
+        Arrays.fill(placableSpots, "");
+        setLine1("");
+        setLine2("");
+        setLine3("");
+        setDiagonalLine1("");
+        setDiagonalLine2("");
     }
 
-    public String getCase2() {
-        return "O|O|O";
+
+    public String outLay()
+    {
+        return placableSpots[0] + "|" + placableSpots[1] + "|"+ placableSpots[2] + "\n" + placableSpots[3] + "|"
+                + placableSpots[4] + "|" + placableSpots[5] + "\n"+ placableSpots[6] + "|" + placableSpots[7] + "|"
+                + placableSpots[8];
     }
 
-    public String getCase3() {
-        return "X|X|X";
+    public String getPlacableSpots(int placing) {
+        return placableSpots[placing];
     }
 
-    public String getCase4() {
-        return "X| | ";
+    public void setPlacableSpots(String string, int placing) {
+        this.placableSpots[placing] = string;
     }
 
-    public String getCase5() {
-        return " |X| ";
+    public String getLine1() {
+        return line1;
     }
 
-    public String getCase6() {
-        return " | |X";
+    public void setLine1(String line1) {
+        this.line1 = line1;
     }
 
-    public String getCase7() {
-        return "O| | ";
+    public String getLine2() {
+        return line2;
     }
 
-    public String getCase8() {
-        return " |O| ";
+    public void setLine2(String line2) {
+        this.line2 = line2;
     }
 
-    public String getCase9() {
-        return " | |O";
+    public String getLine3() {
+        return line3;
     }
 
-    public String getCase10() {
-        return "X|X|O";
+    public void setLine3(String line3) {
+        this.line3 = line3;
     }
 
-    public String getCase11() {
-        return "X|O|X";
+    public String getDiagonalLine1() {
+        return diagonalLine1;
     }
 
-    public String getCase12() {
-        return "O|X|X";
+    public void setDiagonalLine1(String diagonalLine1) {
+        this.diagonalLine1 = diagonalLine1;
     }
 
-    public String getCase13() {
-        return "O|O|X";
+    public String getDiagonalLine2() {
+        return diagonalLine2;
     }
 
-    public String getCase14() {
-        return "O|X|O";
+    public void setDiagonalLine2(String diagonalLine2) {
+        this.diagonalLine2 = diagonalLine2;
     }
-
-    public String getCase15() {
-        return "X|O|O";
-    }
-
-    public String getCase16() {
-        return "X|X| ";
-    }
-
-    public String getCase17() {
-        return "X| |X";
-    }
-
-    public String getCase18() {
-        return " |X|X";
-    }
-
-    public String getCase19() {
-        return "O|O| ";
-    }
-
-    public String getCase20() {
-        return "O| |O";
-    }
-
-    public String getCase21() {
-        return " |O|O";
-    }
-
 }
