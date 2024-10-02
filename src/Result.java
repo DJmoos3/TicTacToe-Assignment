@@ -41,4 +41,25 @@ public class Result extends Graphics
         return isWinner;
 
     }
+
+    public boolean boardIsFull()
+    {
+        boolean isBoardFull = true;
+        String checkIfFull[] = new String[getPlacableSpots().length];
+        for (int i = 0; i < getPlacableSpots().length; i++)
+        {
+            if (getPlacableSpots(i).equalsIgnoreCase("x") || getPlacableSpots(i).equalsIgnoreCase("o"))
+            {
+               checkIfFull[i] = getPlacableSpots(i);
+            }
+        }
+        for (int i = 0; i < checkIfFull.length; i++)
+        {
+            if(checkIfFull[i] == null)
+            {
+                isBoardFull = false;
+            }
+        }
+        return isBoardFull;
+    }
 }

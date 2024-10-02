@@ -42,6 +42,11 @@ public class Game
                     isRunning = false;
                 }
             }
+            if (results.boardIsFull())
+            {
+                System.out.println("Game end in a draw!");
+                isRunning = false;
+            }
             System.out.println(results.outLay());
             whoIsPlaying++;
         }

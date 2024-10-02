@@ -34,6 +34,10 @@ public class Graphics
         return placableSpots[placing];
     }
 
+    public String[] getPlacableSpots() {
+        return placableSpots;
+    }
+
     public void setPlacableSpots(String string, int placing) {
         this.placableSpots[placing] = string;
     }
