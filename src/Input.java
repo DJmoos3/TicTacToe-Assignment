@@ -10,6 +10,8 @@ public class Input
 
         boolean hasPlaced = false;
 
+        //This loop places the players designated type at specified location if it's not already taken.
+        //While keeping check whether the input is valid or not
         while (!hasPlaced) {
             System.out.println("What place do you wanna place your piece?");
             if (scanner.hasNextInt())

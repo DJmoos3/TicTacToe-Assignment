@@ -2,6 +2,7 @@ import java.util.Arrays;
 
 public class Graphics
 {
+    //All the strings used to make the game-board and check who wins
     private String placableSpots[] = new String[9];
     private String line1;
     private String line2;
@@ -12,32 +13,36 @@ public class Graphics
     private String diagonalLine1;
     private String diagonalLine2;
 
+    //This is used to clean all the values in the code so one can play another round afterwards.
     public void cleanTheDeck()
     {
         Arrays.fill(placableSpots, "-");
         setLine1("");
         setLine2("");
         setLine3("");
+        setVerticalLine1("");
+        setVerticalLine2("");
+        setVerticalLine3("");
         setDiagonalLine1("");
         setDiagonalLine2("");
     }
 
-
+    //This is what writes out the outlay of the game-board in the console.
     public String outLay()
     {
         return placableSpots[0] + "|" + placableSpots[1] + "|"+ placableSpots[2] + "\n" + placableSpots[3] + "|"
                 + placableSpots[4] + "|" + placableSpots[5] + "\n"+ placableSpots[6] + "|" + placableSpots[7] + "|"
                 + placableSpots[8];
     }
-
-    public String getPlacableSpots(int placing) {
-        return placableSpots[placing];
-    }
-
+    //While this is for the whole array
     public String[] getPlacableSpots() {
         return placableSpots;
     }
-
+    //This is to get in the specified location
+    public String getPlacableSpots(int placing) {
+        return placableSpots[placing];
+    }
+    //And this to set in specified location
     public void setPlacableSpots(String string, int placing) {
         this.placableSpots[placing] = string;
     }

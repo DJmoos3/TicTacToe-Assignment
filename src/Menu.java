@@ -8,6 +8,8 @@ public class Menu
         Scanner scanner = new Scanner(System.in);
         boolean isRunning = true;
 
+        //This loop starts up the menu to the game and won't start the game or quit it unless specified to do so.
+        //while also checking whether the input is valid or not.
         while(isRunning)
         {
             System.out.println("Welcome to Tic Tac Toe\nWhat do you wanna do?");

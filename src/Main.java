@@ -2,6 +2,7 @@ public class Main
 {
     public static void main(String[] args)
     {
+        //All of this is just what starts and keeps the game going
         Game game = new Game();
         Menu menu = new Menu();
 

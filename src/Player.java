@@ -1,5 +1,6 @@
 public class Player
 {
+    //this class is used to initialize the Player with such as their name and type.
     private String name;
     private String type;
 
