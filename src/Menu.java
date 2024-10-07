@@ -13,12 +13,11 @@ public class Menu
         while(isRunning)
         {
             System.out.println("Welcome to Tic Tac Toe\nWhat do you wanna do?");
-            System.out.println("1: Play");
-            System.out.println("2: Quit");
+            System.out.println("1: PVP\n2: PVE\n3: Scoreboard\n4: Quit");
             if (scanner.hasNextInt())
             {
                 setAnswer(scanner.nextInt());
-                if (getAnswer() > 0 && getAnswer() < 3)
+                if (getAnswer() > 0 && getAnswer() < 5)
                 {
                     isRunning = false;
                 }

@@ -1,18 +1,38 @@
+import java.util.Random;
+import java.util.Scanner;
+
 public class Game
 {
-    Player player1 = new Player();
-    Player player2 = new Player();
+    Player player1 = new Player("Player 1", "X");
+    Player player2 = new Player("Player 2", "O");
+    Player player3 = new Player("Computer", "O");
     Result results = new Result();
     Input inputs = new Input();
+
+    Scanner scanner = new Scanner(System.in);
+    private boolean isPVE = false;
 
     //This is where the game itself runs
     public void run()
     {
         int whoIsPlaying = 1;
         boolean isRunning = true;
-        System.out.println();
-        player1.player("Kalle", "X");
-        player2.player("Daniel","O");
+        int computerPlacement;
+        boolean computerHasCorrectNumber = false;
+        Random random = new Random();
+
+        if(player1.getName().equals("Player 1"))
+        {
+            System.out.println("What's Player 1s name?");
+            player1.setName(scanner.nextLine());
+        }
+
+        if(!isPVE() && player2.getName().equals("Player 2"))
+        {
+            System.out.println("What's Player 2s name?");
+            player2.setName(scanner.nextLine());
+        }
+
         results.cleanTheDeck();
         System.out.println("Pick between 1-9 to chose your placement.");
         System.out.println(results.outLay());
@@ -32,6 +52,27 @@ public class Game
                 if(results.whoWon(player1))
                 {
                     System.out.println(player1.getName() + " Wins!");
+                    player1.setWins(player1.getWins() + 1);
+                    isRunning = false;
+                }
+            }
+            else if (isPVE())
+            {
+                System.out.println("Computer Placed");
+                while(!computerHasCorrectNumber)
+                {
+                    computerPlacement = random.nextInt(9);
+                    if (results.getPlacableSpots(computerPlacement).equalsIgnoreCase("-"))
+                    {
+                        results.setPlacableSpots(player3.getType(), computerPlacement);
+                        computerHasCorrectNumber = true;
+                    }
+                }
+                computerHasCorrectNumber = false;
+                if(results.whoWon(player3))
+                {
+                    System.out.println(player3.getName() + " Wins!");
+                    player3.setWins(player3.getWins() + 1);
                     isRunning = false;
                 }
             }
@@ -42,6 +83,7 @@ public class Game
                 if(results.whoWon(player2))
                 {
                     System.out.println(player2.getName() + " Wins!");
+                    player2.setWins(player2.getWins() + 1);
                     isRunning = false;
                 }
             }
@@ -53,5 +95,20 @@ public class Game
             System.out.println(results.outLay());
             whoIsPlaying++;
         }
+    }
+
+    public String scoreBoard()
+    {
+        return player1.getName() + " Wins:" + player1.getWins() +
+                "\n" + player2.getName() + " Wins:" + player2.getWins() +
+                "\n" + player3.getName() + " Wins:" + player3.getWins();
+    }
+
+    public boolean isPVE() {
+        return isPVE;
+    }
+
+    public void setPVE(boolean PVE) {
+        isPVE = PVE;
     }
 }

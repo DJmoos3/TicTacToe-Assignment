@@ -3,8 +3,9 @@ public class Player
     //this class is used to initialize the Player with such as their name and type.
     private String name;
     private String type;
+    private int wins = 0;
 
-    public void player(String name,String type)
+    public Player(String name, String type)
     {
         setName(name);
         setType(type);
@@ -24,5 +25,13 @@ public class Player
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public int getWins() {
+        return wins;
+    }
+
+    public void setWins(int wins) {
+        this.wins = wins;
     }
 }

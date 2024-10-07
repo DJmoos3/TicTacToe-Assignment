@@ -15,7 +15,16 @@ public class Main
             {
                 game.run();
             }
-            else if (menu.getAnswer() == 2)
+            else if(menu.getAnswer() == 2)
+            {
+                game.setPVE(true);
+                game.run();
+            }
+            else if(menu.getAnswer() == 3)
+            {
+                System.out.println(game.scoreBoard());
+            }
+            else if (menu.getAnswer() == 4)
             {
                 isRunning = false;
             }
