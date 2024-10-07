@@ -34,11 +34,11 @@ public class Graphics
                 + placableSpots[4] + "|" + placableSpots[5] + "\n"+ placableSpots[6] + "|" + placableSpots[7] + "|"
                 + placableSpots[8];
     }
-    //While this is for the whole array
+    //This is for the whole array
     public String[] getPlacableSpots() {
         return placableSpots;
     }
-    //This is to get in the specified location
+    //While this is to get in the specified location
     public String getPlacableSpots(int placing) {
         return placableSpots[placing];
     }

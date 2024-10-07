@@ -1,6 +1,7 @@
 public class Player
 {
-    //this class is used to initialize the Player with such as their name and type.
+    /*this class is used to initialize the Player with such as their name and type.
+    It also holds the amount of wins it's got*/
     private String name;
     private String type;
     private int wins = 0;

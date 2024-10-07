@@ -10,17 +10,21 @@ public class Game
     Input inputs = new Input();
 
     Scanner scanner = new Scanner(System.in);
+
     private boolean isPVE = false;
 
     //This is where the game itself runs
     public void run()
     {
         int whoIsPlaying = 1;
-        boolean isRunning = true;
         int computerPlacement;
+
+        boolean isRunning = true;
         boolean computerHasCorrectNumber = false;
+
         Random random = new Random();
 
+        //These add the players names but only if they haven't been changed before.
         if(player1.getName().equals("Player 1"))
         {
             System.out.println("What's Player 1s name?");
@@ -49,6 +53,7 @@ public class Game
             {
                 System.out.println(player1.getName() + " It's your turn!");
                 inputs.playerInput(player1, results);
+                //have to check whether one wins every turn otherwise the game would not be able to be finished
                 if(results.whoWon(player1))
                 {
                     System.out.println(player1.getName() + " Wins!");
@@ -56,8 +61,11 @@ public class Game
                     isRunning = false;
                 }
             }
+            //This checks whether the game is playing against a computer or not
             else if (isPVE())
             {
+                /*The "computer" is just a random number generator that when that numbers spot isn't taken. It places
+                its mark there just as players do.*/
                 System.out.println("Computer Placed");
                 while(!computerHasCorrectNumber)
                 {
@@ -96,7 +104,7 @@ public class Game
             whoIsPlaying++;
         }
     }
-
+    //this is what shows the scoreboard from the menu.
     public String scoreBoard()
     {
         return player1.getName() + " Wins:" + player1.getWins() +
@@ -104,6 +112,7 @@ public class Game
                 "\n" + player3.getName() + " Wins:" + player3.getWins();
     }
 
+    //This is what decides whether the player plays against another player or the computer.
     public boolean isPVE() {
         return isPVE;
     }
